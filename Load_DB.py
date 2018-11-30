@@ -28,11 +28,8 @@ def fill_in_the_blanks(self, length):
     :param length:
     :return:
     """
-    for i in range(length, 10):
-        self.append(None)
-        self.append(None)
-        self.append(None)
-        self.append(None)
+    self = [None for i in range(length,10) for k in range(0,4)]
+
     return self
 
 def fill_in_the_blanks2(self, length):
@@ -280,8 +277,9 @@ with open("stations.json", 'r') as json_data:
                 if 'import_commodities' in str(k):
                     t = len(g)
                     row = g
-                    for f in range(t, 5):
-                        row.append(None)
+                    row = [None for f in range(t,5)]
+                    #for f in range(t, 5):
+                     #   row.append(None)
                     station.append(row[0])
                     station.append(row[1])
                     station.append(row[2])
